@@ -1,6 +1,7 @@
 <script type="text/javascript">
-    src = location.pathname.match('$/(src)(/[aefmpqAEFMPQ][1-9][0-9]*)?')[0]
-    a1  = location.pathname.match('$/(src)(/[aefmpqAEFMPQ][1-9][0-9]*)?')[1]
+    match = location.pathname.match('/(src)(/[aefmpqAEFMPQ][1-9][0-9]*)?')
+    src = match[1]
+    a1 = match[2]
     document.write(src + '</br>')
     document.write(a1 + '</br>')
 </script>
