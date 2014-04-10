@@ -1,11 +1,6 @@
 <script type="text/javascript">
-    document.write("location.href ： "+location.href+"<br/>");
-    document.write("location.protocol ： "+location.protocol+"<br/>");
-    document.write("location.hostname ： "+location.hostname+"<br/>");
-    document.write("location.host ： "+location.host+"<br/>");
-    document.write("location.port ： "+location.port+"<br/>");
-    document.write("location.pathname ： "+location.pathname+"<br/>");
-    document.write("location.search ： "+location.search+"<br/>");
-    document.write("location.hash ： "+location.hash+"<br/>");
-    document.write(location.pathname.match('/src[^.]*'));
+    src = location.pathname.match('$/(src)(/[aefmpqAEFMPQ][1-9][0-9]*)?')[0]
+    a1  = location.pathname.match('$/(src)(/[aefmpqAEFMPQ][1-9][0-9]*)?')[1]
+    document.write(src + '</br>')
+    document.write(a1 + '</br>')
 </script>
