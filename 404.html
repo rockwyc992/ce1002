@@ -1,5 +1,4 @@
 <script type="text/javascript">
-    //http://www.w3schools.com/htmldom/dom_obj_location.asp  
     document.write("location.href ： "+location.href+"<br/>");
     document.write("location.protocol ： "+location.protocol+"<br/>");
     document.write("location.hostname ： "+location.hostname+"<br/>");
@@ -8,4 +7,5 @@
     document.write("location.pathname ： "+location.pathname+"<br/>");
     document.write("location.search ： "+location.search+"<br/>");
     document.write("location.hash ： "+location.hash+"<br/>");
+    document.write(location.pathname.match('/src[^.]*'));
 </script>
