@@ -1,5 +1,6 @@
 *.class
 www
+cube
 
 # Package Files #
 #*.jar
