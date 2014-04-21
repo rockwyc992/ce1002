@@ -25,7 +25,8 @@ class Demo {
     boolean is_ai;
 
     Demo() {
-        step = 60;
+        //        step = 60;
+        step = -1;
         init_Display();
         init_cubes();
         init_ai();
@@ -57,15 +58,19 @@ class Demo {
 
 
             if(lock) {
-                degree += 50f;
+                degree += 5f;
                 if(degree > 0f) {
                     degree = 0f;
                     lock = false;
                     mode = 0;
                 }
             } else if(is_ai){
-                if(ai.slove())
-                    lock_button(0);
+                if(ai.solve()) {
+                    lock_button(ai.next());
+                } else {
+                    is_ai = false;
+                    System.out.println("AI do it!!!!");
+                }
             } else if(step >= 0) {
                 lock_button(rand.nextInt(50));
                 step--;
@@ -139,6 +144,9 @@ class Demo {
                 lock_button(Global.Mode_AI);
             }
 
+            if(input.controller.getAxisValue(0) == 1.0)
+                cam.x = cam.y = cam.rx = cam.ry = cam.z = cam.rz = 0;
+
             for(int i=0 ; i<3 ; i++) {
                 for(int j=0 ; j<3 ; j++) {
                     for(int k=0 ; k<3 ; k++) {
@@ -168,28 +176,8 @@ class Demo {
         this.mode = mode;
     }
 
-    boolean same() {
-        Point[] t = new Point[6];
-        for(int k=0 ; k<6 ; k++)
-            t[k] = cubes[0][0][0].colors[k];
-
-        for(int i=0 ; i<3 ; i++)
-            for(int j=0 ; j<3 ; j++)
-                for(int a=0 ; a<3 ; a++)
-                    for(int k=0 ; k<6 ; k++)
-                        if(i!=0 && j!=0 && a!=0)
-                        {
-                            if(t[k].x!=cubes[i][j][a].colors[k].x)
-                                return false;
-                            if(t[k].y!=cubes[i][j][a].colors[k].y)
-                                return false;
-                            if(t[k].z!=cubes[i][j][a].colors[k].z)
-                                return false;
-                        }
-        return true;
-    }
     void init_ai() {
-        ai = new AI();
+        ai = new AI(cubes);
     }
 
     void init_Display() {
