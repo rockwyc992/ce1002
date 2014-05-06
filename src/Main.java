@@ -13,12 +13,13 @@ import ce1002.e3.s102502044.*;
 import ce1002.e4.s102502044.*;
 import ce1002.e7.s102502044.*;
 import ce1002.e8.s102502044.*;
+import ce1002.e9.s102502044.*;
 import ce1002.q1.s102502044.*;
 import ce1002.midterm.s102502044.*;
 
 public class Main {
 
     public static void main (String[] argv) {
-        new A9();
+        new E9();
     }
 }
