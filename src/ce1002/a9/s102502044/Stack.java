@@ -26,31 +26,23 @@ class Stack {
 
     //push data on the top of stack
     void push(Object data) throws Exception{
-        try {
-            if(!is_full()) {
-                size++;
-                Node node = new Node();
-                node.data = data;
-                node.next = head;
-                head = node;
-                System.out.println(name + " push " + data);
-            }
-        } catch (Exception e) {
-            throw e;
+        if(!is_full()) {
+            size++;
+            Node node = new Node();
+            node.data = data;
+            node.next = head;
+            head = node;
+            System.out.println(name + " push " + data);
         }
     }
 
     //pop the top element
     void pop() throws Exception{
-        try {
-            if(!is_empty()) {
-                size--;
-                Node node = head;
-                head = node.next;
-                System.out.println(name + " pop " + node.data);
-            }
-        } catch (Exception e) {
-            throw e;
+        if(!is_empty()) {
+            size--;
+            Node node = head;
+            head = node.next;
+            System.out.println(name + " pop " + node.data);
         }
     }
 
