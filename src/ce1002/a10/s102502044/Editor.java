@@ -27,7 +27,7 @@ class Editor extends JFrame {
     void new_all_member() {
         save = new JButton("Save");
         save.setBounds(5,5,75,30);
-        ActionListener saving = new Saving(this);
+        ActionListener saving = new Saving();
         save.addActionListener(saving);
         add(save);
 
@@ -49,17 +49,17 @@ class Editor extends JFrame {
         String name;
         String content;
 
-        Saving(JFrame frame) {
-            this.frame = frame;
+        Saving() {
         }
 
         //button的function
         public void actionPerformed(ActionEvent event) {
-            name = filename.getText() + ".txt";
+            name = filename.getText();
             content = message.getText();
             if(name.isEmpty()) {
                 show_empty();
             } else {
+                name += ".txt";;
                 save_into_file();
                 show_save_success();
             }
@@ -78,12 +78,12 @@ class Editor extends JFrame {
 
         //跳出empty的視窗
         void show_empty() {
-             JOptionPane.showMessageDialog(frame, "File name can't be empty!");
+             JOptionPane.showMessageDialog(null, "File name can't be empty!", "A10", JOptionPane.ERROR_MESSAGE);
         }
 
         //跳出success的視窗 
         void show_save_success() {
-             JOptionPane.showMessageDialog(frame, "File " + name + " saved!");
+             JOptionPane.showMessageDialog(null, "File " + name + " saved!", "A10", JOptionPane.PLAIN_MESSAGE);
         }
     }
 }
