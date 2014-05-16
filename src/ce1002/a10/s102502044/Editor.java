@@ -15,7 +15,7 @@ class Editor extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         setLayout(null);
-        setTitle("A10");
+        setTitle("A10-102502044");
      
         new_all_member();
 
