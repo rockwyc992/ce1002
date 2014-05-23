@@ -11,6 +11,7 @@ public class Moving_cell extends JButton implements Runnable {
     double dx;
     double dy;
 
+    //config this buttom
     Moving_cell(int height, int width) {
         this.height = height - 80;
         this.width = width - 50;
@@ -24,6 +25,7 @@ public class Moving_cell extends JButton implements Runnable {
         dy = 3 * Math.sin(r);
     }
 
+    //moving
     public void run() {
         while(true) {
             x += dx;

@@ -8,6 +8,7 @@ class Wall extends JFrame {
 
     List<JButton> cells = new ArrayList<JButton>();
 
+    //config this frame
     Wall() {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
@@ -21,6 +22,7 @@ class Wall extends JFrame {
         setVisible(true);
     }
 
+    //if typed new a buttom
     class Key_listener implements KeyListener {
 
         public void keyPressed(KeyEvent e) {
