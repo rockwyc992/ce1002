@@ -19,6 +19,8 @@ class Wall extends JFrame {
         KeyListener listener = new Key_listener();
         addKeyListener(listener);
 
+        listener.keyTyped(null);
+
         setVisible(true);
     }
 
@@ -33,6 +35,7 @@ class Wall extends JFrame {
 
         public void keyTyped(KeyEvent e) {
             JButton cell = new Moving_cell(getHeight(), getWidth());
+            cell.addKeyListener(this);
             cells.add(cell);
             add(cell);
 
