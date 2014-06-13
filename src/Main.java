@@ -23,11 +23,12 @@ import ce1002.e10.s102502044.*;
 import ce1002.e12.s102502044.*;
 import ce1002.q1.s102502044.*;
 import ce1002.q2.s102502044.*;
+import ce1002.finalexam.s102502044.*;
 import ce1002.midterm.s102502044.*;
 
 public class Main {
 
     public static void main (String[] argv) {
-        new A14();
+        new Final();
     }
 }
